@@ -1,156 +1,115 @@
-# MorphoGuard Project Page
+# MorphoGuard | Anonymous Supplementary Material
 
-Academic single-page website for the MorphoGuard research project.
+## Purpose
+
+This repository contains an anonymous supplementary webpage for the paper:
 
 **MorphoGuard: A Morphology-Based Whole-Body Interactive Motion Controller**
 
-## Quick Start
+The webpage is designed for double-blind review and contains no author names, affiliations, contact information, or external project links.
+
+---
+
+## File Structure
+
+```
+morphoguard-anonymous-project-page/
+├── index.html              # Main webpage
+├── .nojekyll               # Disable Jekyll processing on GitHub Pages
+├── README.md               # This file
+├── assets/
+│   ├── css/
+│   │   └── style.css       # Stylesheet
+│   ├── js/
+│   │   └── main.js         # JavaScript functionality
+│   └── media/
+│       ├── motivation.jpg
+│       ├── framework.jpg
+│       ├── baseline-comparison.jpg
+│       ├── video-illustration.mp4
+│       ├── baseline-comparison-morphoguard.mp4
+│       ├── baseline-comparison-teleoperation.mp4
+│       ├── baseline-comparison-unified-physical-model.mp4
+│       ├── narrow-passage-morphology-regulation.mp4
+│       ├── sim-to-real-multi-object-manipulation-exp1.mp4
+│       └── sim-to-real-multi-object-manipulation-exp2.mp4
+```
+
+---
+
+## Media File Preparation
+
+The following original media files must be renamed and placed into `assets/media/`:
+
+| Original Filename                                 | Website Filename                                 |
+| ------------------------------------------------- | ------------------------------------------------ |
+| `baseline_comparison__morphoguard.mp4`            | `baseline-comparison-morphoguard.mp4`             |
+| `baseline_comparison_teleoperation.mp4`           | `baseline-comparison-teleoperation.mp4`           |
+| `baseline_comparison_unified_physical_model.mp4`  | `baseline-comparison-unified-physical-model.mp4`  |
+| `baseline_comparson.jpg`                          | `baseline-comparison.jpg`                         |
+| `framework_jpg.jpg`                               | `framework.jpg`                                   |
+| `motivation.jpg`                                  | `motivation.jpg`                                  |
+| `narrow-passage_morphology_regulation_exp.mp4`    | `narrow-passage-morphology-regulation.mp4`        |
+| `sim_to_real_Multi-object manipulation_exp1.mp4`  | `sim-to-real-multi-object-manipulation-exp1.mp4`  |
+| `sim_to_real_Multi-object manipulation_exp2.mp4`  | `sim-to-real-multi-object-manipulation-exp2.mp4`  |
+| `video_illostration.mp4`                          | `video-illustration.mp4`                          |
+
+**Important:** All media filenames in `index.html` reference the renamed filenames only. Spaces, double underscores, and original file naming inconsistencies have been normalized to ensure reliable loading on GitHub Pages.
+
+---
+
+## Local Preview
+
+To preview the webpage locally, simply open `index.html` in a web browser:
 
 ```bash
-npm install
-npm run dev
+open index.html
 ```
 
-The development server starts at `http://localhost:3000`.
-
-## Build for Deployment
+Alternatively, serve the directory with a simple local static server:
 
 ```bash
-npm run build
+# Python 3
+python3 -m http.server 8000
+
+# Open http://localhost:8000 in a browser
 ```
 
-Output is generated in the `dist/` directory.
+No build tools, npm dependencies, or server-side processing are required.
 
-## Project Structure
+---
 
-```
-morphoguard-project-page/
-├── public/
-│   └── assets/                  # Place images and videos here
-├── src/
-│   ├── components/              # React components for each section
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Motivation.jsx
-│   │   ├── CoreInsight.jsx
-│   │   ├── MethodOverview.jsx
-│   │   ├── RepresentationComparison.jsx
-│   │   ├── Experiments.jsx
-│   │   ├── VideoGallery.jsx
-│   │   ├── KeyFindings.jsx
-│   │   ├── Resources.jsx
-│   │   ├── Citation.jsx
-│   │   ├── Footer.jsx
-│   │   ├── MediaModal.jsx
-│   │   └── AssetPlaceholder.jsx
-│   ├── config/
-│   │   └── projectConfig.js     # Centralized configuration
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-├── vite.config.js
-└── README.md
-```
+## GitHub Pages Deployment
 
-## How to Customize
+1. Upload all files to an **anonymous** GitHub repository.
+2. Ensure `index.html` is in the repository root directory.
+3. Ensure `.nojekyll` is in the repository root directory.
+4. Go to repository **Settings**.
+5. Open **Pages** under "Code and automation".
+6. Under **Source**, select **Deploy from a branch**.
+7. Select branch **main** (or your default branch).
+8. Select folder **/(root)**.
+9. Click **Save**.
+10. Use the generated anonymous webpage URL **(verify it does not disclose identity before sharing)**.
 
-### Update Authors, Affiliation, and Venue
+---
 
-Edit `src/config/projectConfig.js`:
+## Anonymity Checklist
 
-```js
-authors: [
-  { name: 'Your Name 1*', isCorresponding: false, isEqual: true },
-  { name: 'Your Name 2*', isCorresponding: false, isEqual: true },
-  // ...
-],
-affiliation: 'Your Lab / University',
-venue: 'Conference Name, 2026',
-```
+Before sharing this webpage for double-blind review, verify that:
 
-### Update Links
+- [ ] The repository is hosted by an anonymous account or organization.
+- [ ] The repository URL does not contain author, laboratory, or institutional names.
+- [ ] Git commit history does not disclose author identity.
+- [ ] No author names, affiliations, acknowledgements, funding information, or contact emails appear on the webpage.
+- [ ] No images contain institutional logos or identifying watermarks.
+- [ ] No videos contain identifying watermarks, subtitles, embedded metadata, or background materials revealing identity.
+- [ ] No EXIF metadata in images identifies the authors or institution.
+- [ ] No external Paper, Code, Dataset, arXiv, or project links are enabled.
+- [ ] README and source-code comments remain anonymous.
 
-Edit the `links` object in `src/config/projectConfig.js`. Replace all `'#'` placeholders with actual URLs:
+---
 
-```js
-links: {
-  paper: 'https://arxiv.org/abs/...',
-  code: 'https://github.com/...',
-  video: 'https://youtube.com/...',
-  dataset: 'https://...',
-  // ...
-}
-```
+## Post-Review Update Note
 
-### Replace Placeholder Images and Videos
-
-Place your assets in `public/assets/` with the following filenames:
-
-```
-hero_demo.mp4           # Hero video (optional)
-hero_overview.jpg       # Hero image (fallback)
-morphoguard_framework.png
-representation_ee.png
-representation_pc.png
-representation_mp.png
-exp_narrow_passage.jpg
-exp_ablation_lift.jpg
-exp_baseline_comparison.jpg
-sim_to_real_platform.jpg
-sim_to_real_sequence.jpg
-result_joint_tracking.png
-result_ablation_table.png
-result_force_curves.png
-result_baseline_comparison.png
-result_force_error.png
-contact_error_curve.png
-video_forearm_grasping.mp4
-video_narrow_passage.mp4
-video_multi_object.mp4
-video_sim_to_real.mp4
-```
-
-### Update Citation
-
-Edit the `citation` object in `src/config/projectConfig.js`:
-
-```js
-citation: {
-  bibtex: `@inproceedings{morphoguard2026,
-  title     = {MorphoGuard: A Morphology-Based Whole-Body Interactive Motion Controller},
-  author    = {Your Name and Other Authors},
-  booktitle = {Proceedings of ...},
-  year      = {2026}
-}`,
-  note: 'Citation information ...',
-}
-```
-
-### Replace Experiment Result Values
-
-In `src/components/Experiments.jsx`, search for `XX.X%`, `XX.X N`, `XX.X ± XX.X` and replace with final reported values. There is a clearly marked placeholder table in Experiment 2.
-
-### Update Contact Email
-
-Edit `contactEmail` in `src/config/projectConfig.js`.
-
-## Tech Stack
-
-- **React 18** — UI framework
-- **Tailwind CSS** — Utility-first CSS
-- **Framer Motion** — Scroll and hover animations
-- **Lucide React** — Icon library
-- **KaTeX** — LaTeX math rendering
-- **Vite** — Build tool
-
-## Design Notes
-
-- Placeholder blocks are shown automatically when asset files are missing.
-- The website follows an academic, minimal, and robotics-oriented design.
-- Color palette: dark blue-gray (#263C43), teal (#287271), highlight green (#2A9D8F).
-- No fake results or fabricated figures are included.
-- All quantitative claims should be verified and inserted from actual experimental data.
+After the double-blind review period, public resource links, citation information, authorship, affiliation, and acknowledgements may be added in a separate public-release version of the webpage.

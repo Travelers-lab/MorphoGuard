@@ -1,18 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MorphoGuard: A Morphology-Based Whole-Body Interactive Motion Controller - Learning force-aware morphology representations for distributed whole-body robot interactions." />
-    <title>MorphoGuard — Whole-Body Interactive Motion Control</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
-  </head>
-  <body class="bg-background text-text-primary antialiased">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anonymous supplementary webpage for MorphoGuard: A Morphology-Based Whole-Body Interactive Motion Controller.">
+  <title>MorphoGuard | Anonymous Supplementary Material</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="nav-title">MorphoGuard</span>
+        <span class="nav-subtitle">Whole-Body Interactive Motion Control</span>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="#abstract" class="nav-link" role="menuitem">Abstract</a></li>
+        <li role="none"><a href="#motivation" class="nav-link" role="menuitem">Motivation</a></li>
+        <li role="none"><a href="#framework" class="nav-link" role="menuitem">Framework</a></li>
+        <li role="none"><a href="#experiments" class="nav-link" role="menuitem">Experiments</a></li>
+        <li role="none"><a href="#videos" class="nav-link" role="menuitem">Videos</a></li>
+        <li role="none"><span class="nav-badge">Anonymous Supplementary Page</span></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="container">
+      <span class="hero-badge">Anonymous Supplementary Material</span>
+      <h1 class="hero-title">
+        <span class="hero-title-main">MorphoGuard</span>
+        <span class="hero-title-sub">A Morphology-Based Whole-Body Interactive Motion Controller</span>
+      </h1>
+      <p class="hero-subtitle">Learning force-aware whole-body morphology representations for distributed robot interactions.</p>
+      <p class="hero-summary">MorphoGuard enables robots to coordinate contacts across arbitrary body regions by learning interactive motion control from body-wide spatial–force morphology states.</p>
+      <div class="hero-actions">
+        <a href="#framework" class="btn btn-primary">View Method</a>
+        <a href="#videos" class="btn btn-secondary">Watch Experiments</a>
+        <a href="#abstract" class="btn btn-secondary">Read Abstract</a>
+      </div>
+      <div class="hero-video-wrapper">
+        <h3 class="hero-video-title">Overview Video</h3>
+        <div class="video-card hero-video-card">
+          <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+            <source src="./assets/media/video-illustration.mp4" type="video/mp4">
+          </video>
+          <button class="video-enlarge-btn" aria-label="Enlarge overview video" data-video-src="./assets/media/video-illustration.mp4" data-video-title="Overview Video">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+          </button>
+        </div>
+        <p class="hero-video-caption">Overview of morphology-based whole-body interactive motion control and representative robot demonstrations.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Abstract Section -->
+  <section class="section section-light" id="abstract">
+    <div class="container container-narrow">
+      <h2 class="section-title">Abstract</h2>
+      <div class="abstract-block">
+        <p>Robots in unstructured environments often face interaction tasks that require contacts beyond end-effectors. However, existing whole-body control methods usually rely on sparse or predefined contact structures, making them poorly suited to representing contacts over arbitrary body regions. This limitation stems from the lack of a body-wide, force-aware morphology representation that can uniformly encode where and how the robot interacts with the environment. To address this gap, we propose MorphoGuard, a morphology-based interaction control model for managing contacts across the whole body. Inspired by material-point (MP) discretization, MorphoGuard builds on a Whole-Body Spatial–Force Morphology Representation that encodes distributed spatial-motion and contact-force states across the robot body. By coupling MPs with electronic skin (e-skin), MorphoGuard integrates body-wide contact-force information into interactive motion modeling. Leveraging the expressive capacity of neural networks, MorphoGuard learns a mapping from current and target whole-body morphology states to joint-level commands. Comprehensive experimental evaluations show that MorphoGuard produces reliable joint commands, coordinates distributed body contacts, and enables robust real-robot execution under complex whole-body interaction conditions.</p>
+      </div>
+      <div class="keyword-tags">
+        <span class="keyword-tag">Whole-Body Interaction</span>
+        <span class="keyword-tag">Morphology Representation</span>
+        <span class="keyword-tag">Material Points</span>
+        <span class="keyword-tag">Electronic Skin</span>
+        <span class="keyword-tag">Interactive Motion Control</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivation Section -->
+  <section class="section" id="motivation">
+    <div class="container">
+      <h2 class="section-title">Motivation</h2>
+      <p class="section-subtitle">Why do robots need morphology-aware whole-body interaction control?</p>
+      <div class="image-display" data-enlarge="true">
+        <img src="./assets/media/motivation.jpg" alt="Motivation for morphology-aware whole-body interactive motion control in unstructured environments." loading="lazy">
+        <button class="image-enlarge-btn" aria-label="Enlarge motivation image">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        </button>
+      </div>
+      <div class="text-block">
+        <p>Robots operating in cluttered and unstructured environments often encounter tasks that cannot be accomplished through end-effector interactions alone. Contacts may arise on forearms, elbows, and other body regions, requiring the robot to coordinate distributed and time-varying interactions.</p>
+        <p>Existing representations based on sparse terminal states or predefined contact structures are limited in describing such body-wide interactions. MorphoGuard addresses this challenge by representing robot morphology through distributed spatial–force states that encode both where interaction occurs and how contact forces evolve.</p>
+      </div>
+      <div class="card-grid card-grid-3">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <h3 class="card-title">Beyond End-Effectors</h3>
+          <p class="card-text">Whole-body tasks require interaction capabilities across arbitrary robot body regions.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h18v2H3v-2zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/></svg>
+          </div>
+          <h3 class="card-title">Distributed Contacts</h3>
+          <p class="card-text">Multiple body contacts must be coordinated under changing spatial and force conditions.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="card-title">Morphology Representation</h3>
+          <p class="card-text">A body-wide and force-aware representation is required for reliable interactive motion control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework Section -->
+  <section class="section section-tinted" id="framework">
+    <div class="container">
+      <h2 class="section-title">MorphoGuard Framework</h2>
+      <p class="section-intro">MorphoGuard builds a Whole-Body Spatial–Force Morphology Representation and learns a mapping from current and target morphology states to joint-level motion commands.</p>
+      <div class="image-display" data-enlarge="true">
+        <img src="./assets/media/framework.jpg" alt="Framework of MorphoGuard showing morphology representation, force-aware sensing, and joint-level command prediction." loading="lazy">
+        <button class="image-enlarge-btn" aria-label="Enlarge framework image">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        </button>
+      </div>
+      <div class="card-grid card-grid-4">
+        <div class="card">
+          <span class="card-num">01</span>
+          <h3 class="card-title">Whole-Body Morphology Representation</h3>
+          <p class="card-text">The robot body is represented through distributed material points that provide spatial coverage over interaction-capable body regions.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">02</span>
+          <h3 class="card-title">Force-Aware E-Skin Coupling</h3>
+          <p class="card-text">Electronic skin sensing associates local contact forces with the spatial states of corresponding material points.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">03</span>
+          <h3 class="card-title">Current and Target Morphology States</h3>
+          <p class="card-text">Distributed spatial-motion and contact-force information is encoded into current and target morphology states for interactive motion modeling.</p>
+        </div>
+        <div class="card">
+          <span class="card-num">04</span>
+          <h3 class="card-title">Joint-Level Motion Commands</h3>
+          <p class="card-text">A neural controller maps morphology states to joint-level commands for executing whole-body interactive motions.</p>
+        </div>
+      </div>
+      <div class="equation-area">
+        <div class="equation-block">
+          <p class="equation-formula">Z(t) = [x(t), &#x1E8B;(t), F(t)] &#x2208; &#x211D;<sup>N<sub>m</sub> &times; 9</sup></p>
+          <p class="equation-caption">Whole-Body Spatial–Force Morphology State</p>
+        </div>
+        <div class="equation-block">
+          <p class="equation-formula">&Delta;q(t) = f<sub>&theta;</sub>(Z<sub>current</sub>(t), Z<sub>target</sub>(t))</p>
+          <p class="equation-caption">Joint-Level Command Prediction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experimental Evaluation Section -->
+  <section class="section" id="experiments">
+    <div class="container">
+      <h2 class="section-title">Experimental Evaluation</h2>
+      <p class="section-intro">We evaluate MorphoGuard through baseline comparison and task-oriented performance tests, focusing on distributed contact coordination, morphology-sensitive motion control, and real-robot execution.</p>
+      <div class="card-grid card-grid-2">
+        <div class="card card-eval">
+          <h3 class="card-title">Baseline Comparison</h3>
+          <p class="card-text">MorphoGuard is compared with representative interaction control strategies during distributed manipulation tasks.</p>
+          <ul class="eval-methods">
+            <li>MorphoGuard</li>
+            <li>Teleoperation</li>
+            <li>Unified Physical Model</li>
+          </ul>
+          <a href="#baseline-comparison" class="btn btn-primary btn-sm">View Baseline Videos</a>
+        </div>
+        <div class="card card-eval">
+          <h3 class="card-title">Performance Tests</h3>
+          <p class="card-text">MorphoGuard is evaluated on morphology regulation in constrained spaces and sim-to-real multi-object manipulation tasks.</p>
+          <ul class="eval-methods">
+            <li>Narrow-Passage Morphology Regulation</li>
+            <li>Sim-to-Real Multi-Object Manipulation — Trial 1</li>
+            <li>Sim-to-Real Multi-Object Manipulation — Trial 2</li>
+          </ul>
+          <a href="#videos" class="btn btn-primary btn-sm">View Performance Videos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baseline Comparison Section -->
+  <section class="section section-tinted" id="baseline-comparison">
+    <div class="container">
+      <h2 class="section-title">Baseline Comparison</h2>
+      <p class="section-intro">We compare MorphoGuard with representative whole-body interaction control strategies to examine distributed contact coordination during manipulation tasks.</p>
+      <div class="image-display" data-enlarge="true">
+        <img src="./assets/media/baseline-comparison.jpg" alt="Baseline comparison results for whole-body interactive motion control methods." loading="lazy">
+        <button class="image-enlarge-btn" aria-label="Enlarge baseline comparison image">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+        </button>
+      </div>
+      <p class="figure-caption">Comparison of interaction behaviors among MorphoGuard and baseline control strategies. Detailed evaluation settings and metrics are described in the anonymous manuscript.</p>
+      <div class="card-grid card-grid-3">
+        <div class="card card-video card-video-highlight">
+          <span class="video-badge-ours">Ours</span>
+          <h3 class="card-title">MorphoGuard</h3>
+          <div class="video-card">
+            <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+              <source src="./assets/media/baseline-comparison-morphoguard.mp4" type="video/mp4">
+            </video>
+            <button class="video-enlarge-btn" aria-label="Enlarge MorphoGuard video" data-video-src="./assets/media/baseline-comparison-morphoguard.mp4" data-video-title="MorphoGuard (Ours)">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+          <p class="card-text">Morphology-based whole-body interactive motion control using distributed spatial–force states.</p>
+        </div>
+        <div class="card card-video">
+          <h3 class="card-title">Teleoperation</h3>
+          <div class="video-card">
+            <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+              <source src="./assets/media/baseline-comparison-teleoperation.mp4" type="video/mp4">
+            </video>
+            <button class="video-enlarge-btn" aria-label="Enlarge Teleoperation video" data-video-src="./assets/media/baseline-comparison-teleoperation.mp4" data-video-title="Teleoperation">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+          <p class="card-text">Human-guided whole-body operation used as a representative interaction baseline.</p>
+        </div>
+        <div class="card card-video">
+          <h3 class="card-title">Unified Physical Model</h3>
+          <div class="video-card">
+            <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+              <source src="./assets/media/baseline-comparison-unified-physical-model.mp4" type="video/mp4">
+            </video>
+            <button class="video-enlarge-btn" aria-label="Enlarge Unified Physical Model video" data-video-src="./assets/media/baseline-comparison-unified-physical-model.mp4" data-video-title="Unified Physical Model">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+          <p class="card-text">Model-based whole-body interaction control constructed through explicit physical modeling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Tests Section -->
+  <section class="section" id="videos">
+    <div class="container">
+      <h2 class="section-title">Performance Tests</h2>
+      <p class="section-intro">The following experiments examine whether MorphoGuard distinguishes morphology-dependent motions and supports real-robot execution under complex whole-body interaction conditions.</p>
+
+      <!-- Experiment 1 -->
+      <div class="experiment-block">
+        <h3 class="experiment-title">Narrow-Passage Morphology Regulation</h3>
+        <p class="experiment-objective">Evaluating morphology-sensitive motion control beyond sparse end-effector observations.</p>
+        <div class="video-card video-card-large">
+          <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+            <source src="./assets/media/narrow-passage-morphology-regulation.mp4" type="video/mp4">
+          </video>
+          <button class="video-enlarge-btn" aria-label="Enlarge Narrow-Passage Morphology Regulation video" data-video-src="./assets/media/narrow-passage-morphology-regulation.mp4" data-video-title="Narrow-Passage Morphology Regulation">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+          </button>
+        </div>
+        <p class="experiment-description">The robot passes through constrained openings whose required whole-body configurations cannot be fully specified by end-effector positions alone. This experiment examines whether MorphoGuard captures morphology-dependent motion requirements.</p>
+        <div class="keyword-tags">
+          <span class="keyword-tag">Morphology Regulation</span>
+          <span class="keyword-tag">Narrow Passage</span>
+          <span class="keyword-tag">Whole-Body Configuration</span>
+        </div>
+      </div>
+
+      <!-- Experiment 2 -->
+      <div class="experiment-block">
+        <h3 class="experiment-title">Sim-to-Real Multi-Object Manipulation — Trial 1</h3>
+        <p class="experiment-objective">Executing simulation-generated morphology references on a physical robot.</p>
+        <div class="video-card video-card-large">
+          <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+            <source src="./assets/media/sim-to-real-multi-object-manipulation-exp1.mp4" type="video/mp4">
+          </video>
+          <button class="video-enlarge-btn" aria-label="Enlarge Sim-to-Real Multi-Object Manipulation Trial 1 video" data-video-src="./assets/media/sim-to-real-multi-object-manipulation-exp1.mp4" data-video-title="Sim-to-Real Multi-Object Manipulation — Trial 1">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+          </button>
+        </div>
+        <p class="experiment-description">Material-point interaction references generated in simulation are mapped by MorphoGuard into executable joint-level commands for physical multi-object manipulation.</p>
+        <div class="keyword-tags">
+          <span class="keyword-tag">Sim-to-Real</span>
+          <span class="keyword-tag">Multi-Object Manipulation</span>
+          <span class="keyword-tag">Distributed Contact</span>
+        </div>
+      </div>
+
+      <!-- Experiment 3 -->
+      <div class="experiment-block">
+        <h3 class="experiment-title">Sim-to-Real Multi-Object Manipulation — Trial 2</h3>
+        <p class="experiment-objective">Demonstrating whole-body interaction execution under another distributed-contact condition.</p>
+        <div class="video-card video-card-large">
+          <video controls muted playsinline preload="metadata" class="media-video" data-enlarge="true">
+            <source src="./assets/media/sim-to-real-multi-object-manipulation-exp2.mp4" type="video/mp4">
+          </video>
+          <button class="video-enlarge-btn" aria-label="Enlarge Sim-to-Real Multi-Object Manipulation Trial 2 video" data-video-src="./assets/media/sim-to-real-multi-object-manipulation-exp2.mp4" data-video-title="Sim-to-Real Multi-Object Manipulation — Trial 2">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+          </button>
+        </div>
+        <p class="experiment-description">A second real-robot execution example illustrates morphology-based interactive motion control under distributed and time-varying contact conditions.</p>
+        <div class="keyword-tags">
+          <span class="keyword-tag">Physical Execution</span>
+          <span class="keyword-tag">Contact Coordination</span>
+          <span class="keyword-tag">Whole-Body Interaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways Section -->
+  <section class="section section-tinted" id="takeaways">
+    <div class="container">
+      <h2 class="section-title">Key Takeaways</h2>
+      <div class="card-grid card-grid-4">
+        <div class="card card-takeaway">
+          <h3 class="card-title">Body-Wide Representation</h3>
+          <p class="card-text">MorphoGuard describes interaction states across arbitrary robot body regions rather than relying only on sparse end-effector information.</p>
+        </div>
+        <div class="card card-takeaway">
+          <h3 class="card-title">Force-Aware Interaction Modeling</h3>
+          <p class="card-text">Coupling material points with electronic skin integrates distributed contact-force information into interactive motion modeling.</p>
+        </div>
+        <div class="card card-takeaway">
+          <h3 class="card-title">Learned Motion Control</h3>
+          <p class="card-text">MorphoGuard maps current and target whole-body morphology states to executable joint-level commands.</p>
+        </div>
+        <div class="card card-takeaway">
+          <h3 class="card-title">Real-Robot Evaluation</h3>
+          <p class="card-text">The presented experiments examine morphology-sensitive control, distributed contact coordination, and real-robot sim-to-real execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anonymous Review Notice Section -->
+  <section class="section section-notice" id="anonymous-notice">
+    <div class="container container-narrow">
+      <p class="notice-text">This webpage is provided as anonymous supplementary material for double-blind review. Identifying information and external project links have been intentionally omitted.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-brand">
+        <span class="footer-title">MorphoGuard</span>
+        <span class="footer-subtitle">A Morphology-Based Whole-Body Interactive Motion Controller</span>
+        <span class="footer-label">Anonymous Supplementary Material</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#abstract">Abstract</a></li>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#videos">Videos</a></li>
+      </ul>
+      <p class="footer-copy">Prepared for anonymous double-blind review.</p>
+    </div>
+  </footer>
+
+  <!-- Media Modal -->
+  <div class="modal-overlay" id="media-modal" role="dialog" aria-label="Media viewer" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Close media viewer">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="modal-media-wrapper" id="modal-media-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
 </html>
